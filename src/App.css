@@ -1,0 +1,17 @@
+#publicacion{
+  border: 2px solid black;
+}
+
+#root {
+  text-align: center;
+}
+
+.boton{
+  color: black;
+}
+
+.input{
+  font-size: 17px;
+}
+
+
