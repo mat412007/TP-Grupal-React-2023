@@ -6,7 +6,6 @@ export default function Posts(){
       <>
       <header style={{height: '50px',backgroundColor: 'black', width: '100%', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
         <Link to="/">Inicio</Link>
-        <Link to="/comentarios">Comentarios</Link>
         <Link to="/publicaciones">Posts</Link>
     </header>
       <h1>Publicaciones</h1>
