@@ -10,18 +10,12 @@ function Inicio(){
   const[publicaciones, setPublicaciones] = useState([])
   const[nombre, setNombre] = useState('')
   const[titulo, setTitulo] = useState('')
-  const[comentario, setComentario] = useState('')
-  const[comentarios, setComentarios] = useState([])
 
   useEffect(() => {
     let posteos = JSON.parse(localStorage.getItem('posts'));
     if (posteos) setPublicaciones(posteos);   
   }, [])  
 
-  function handleComentar() {
-    setComentarios([...comentarios, comentario])
-    setComentario('')
-  }
 
   function nombreCambio(e){
     setNombre(e.target.value)
@@ -70,10 +64,10 @@ function Inicio(){
   function Lista(){
     return(
         <>
-        <ul style={{listStyle: 'none'}}>  
+        <div>  
         {
         publicaciones.map((p,idx) => 
-        <li id={idx} key={idx}>
+        <div id={idx} key={idx}>
             <h3>{p.titulo}</h3>
             <div style={{display: 'flex', justifyContent: 'center'}}>
             <div style={estiloPublicacion}><Markdown>{p.publicacion}</Markdown></div>
@@ -81,23 +75,9 @@ function Inicio(){
             </div>
             <input type="button" value="Eliminar" onClick={deleteTarea} style={{marginTop: '10px'}} /> 
             <br /><br />
-            <div>
-                <textarea 
-                id='comentario'
-                value={comentario}
-                onChange={(e) => {setComentario(e.target.value)}}/> 
-                <br />
-                <input onClick={handleComentar} type='button' value="Comentar"/>
-                <h4>Comentarios</h4>
-                {
-                    comentarios.map((comentario) => (
-                        <p>{comentario}</p>
-                    ))
-                }
-            </div>
-        </li>)
+        </div>)
         } 
-        </ul>
+        </div>
         </>
     )
 }
