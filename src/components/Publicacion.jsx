@@ -8,6 +8,7 @@ const Publicacion = ({nombreUsuario, contenido, titulo, publicaciones, setPublic
     const [comentarios, setComentarios] = useState([])
 
     function handleComentar() {
+        localStorage.setItem('comentarios',JSON.stringify([...comentarios, comentario]))
         setComentarios([...comentarios, comentario])
         setComentario('')
     }
@@ -33,7 +34,7 @@ const Publicacion = ({nombreUsuario, contenido, titulo, publicaciones, setPublic
         <main>
             <section>
                 <p className='titulo'>{titulo}</p>
-                <p className='contenido'><Markdown>{contenido}</Markdown></p>
+                <div className='contenido'><Markdown>{contenido}</Markdown></div>
             </section>
             <section className='comentarios'>
                 <textarea 

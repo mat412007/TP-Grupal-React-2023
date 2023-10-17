@@ -50,6 +50,7 @@ const Inicio = () => {
             <input type="text" placeholder='Ingrese su nombre' value={nombre} onChange={nombreCambio} /><br /><br />
             <input type="text" placeholder='Ingrese el titulo' value={titulo} onChange={tituloCambio} /><br /><br />
             <textarea
+            value={contenido}
             className='content'
             onChange={(e) => {setContenido(e.target.value)}}
             /> 
