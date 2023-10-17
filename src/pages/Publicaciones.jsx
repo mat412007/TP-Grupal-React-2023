@@ -1,6 +1,5 @@
 import React from 'react'
 import '../App.css'
-import Lista from '../components/Lista'
 
 const Publicaciones = () => {
   return (

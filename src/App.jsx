@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Inicio from './pages/Inicio'
-import Publicaciones from './pages/Publicaciones'
 import './App.css'
 import { useState, useEffect } from 'react'
 import Lista from './components/Lista'
