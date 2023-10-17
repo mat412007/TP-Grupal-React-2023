@@ -3,18 +3,12 @@ import Publicacion from '../components/Publicacion'
 import '../App.css'
 import Lista from '../components/Lista'
 
-const Inicio = () => {
+const Inicio = ({setPublicaciones, publicaciones}) => {
 
     const [contenido, setContenido] = useState('')
-    const [publicaciones, setPublicaciones] = useState([])
     const [nombre, setNombre] = useState('')
     const [titulo, setTitulo] = useState('')
 
-
-    useEffect(() => {
-        const publicacionesGuardadas = JSON.parse(localStorage.getItem('publicaciones')) || []
-        setPublicaciones(publicacionesGuardadas)
-    }, [])
 
     function nombreCambio(e){
         setNombre(e.target.value)
@@ -58,9 +52,9 @@ const Inicio = () => {
             <br />
             <input type='button' onClick={handleClick} value="Publicar"/>
         </div>
-        <div id='publicaciones'>
+        {/* <div id='publicaciones'>
             <Lista publicaciones={publicaciones} setPublicaciones={setPublicaciones} />
-        </div>
+        </div> */}
     </div>
   )
 }

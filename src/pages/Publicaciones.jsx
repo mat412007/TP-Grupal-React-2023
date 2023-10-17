@@ -6,7 +6,6 @@ const Publicaciones = () => {
   return (
     <div>
         <p>Esta es mi pagina de publicaciones</p>
-        <Lista />
     </div>
   )
 }
