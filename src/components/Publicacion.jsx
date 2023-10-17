@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Markdown  from 'react-markdown';
 import '../App.css'
 
@@ -13,14 +13,19 @@ const Publicacion = ({nombreUsuario, contenido, titulo, publicaciones, setPublic
         setComentario('')
     }
 
+    useEffect(() => {
+        const comentariosGuardados = JSON.parse(localStorage.getItem('comentarios')) || []
+        setComentarios(comentariosGuardados)
+    }, [])
+
     function deleteTarea(e) {
         let id = +e.target.parentElement.id; /*El + hace exactamente lo mismo que parseInt()*/
         let nuevasPublicaciones = publicaciones.filter((publicacion, indice) => {
           if (indice !== id) {
             return publicacion;
           }
-          else{
-            localStorage.removeItem(id);
+          else if(indice === id){
+            localStorage.removeItem(publicacion, indice);
           }
         });
         setPublicaciones(nuevasPublicaciones);

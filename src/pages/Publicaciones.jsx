@@ -1,12 +1,12 @@
 import React from 'react'
 import '../App.css'
-import Publicacion from '../components/Publicacion'
+import Lista from '../components/Lista'
 
 const Publicaciones = () => {
   return (
     <div>
         <p>Esta es mi pagina de publicaciones</p>
-        <Publicacion />
+        <Lista />
     </div>
   )
 }
