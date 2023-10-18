@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import Publicacion from '../components/Publicacion'
+import React, { useState } from 'react'
 import '../App.css'
-import Lista from '../components/Lista'
 
 const Inicio = ({setPublicaciones, publicaciones}) => {
 
@@ -48,6 +46,8 @@ const Inicio = ({setPublicaciones, publicaciones}) => {
             value={contenido}
             className='content'
             onChange={(e) => {setContenido(e.target.value)}}
+            cols="40"
+            rows="15"
             /> 
             <br />
             <input type='button' onClick={handleClick} value="Publicar"/>
